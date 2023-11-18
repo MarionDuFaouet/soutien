@@ -80,9 +80,21 @@
     <!-- javascript part -->
     <script type="text/javascript">
 
-    function lancer() {
-        // Code here
-    }
+function lancer() {
+            //variable qui créé un tableau vide
+            let tab = [];
+            //boucle qui va réaliser le calcul jusqu'à 12
+            for (i = 0; i <= 12; i++) {
+                result = i * (i + 1);
+                tab.push(result);
+            }
+            /* 
+             * fonction qui va afficher les résultats de la boucle en fin d'html 
+             * dans un élémentde type cartouche
+             */
+            displayArray(tab);
+            return;
+        }
 
     </script>
 
