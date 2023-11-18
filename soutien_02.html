@@ -18,10 +18,12 @@
         <ul>
             <li>faire les points dans l'ordre et ne passer au point suivant que lorsque le précédent est achevé
                 et testé,</li>
-            <li>utiliser la console autant que nécessaire Pour bien observer le contenu et le type des différentes variables,</li>
+            <li>utiliser la console autant que nécessaire Pour bien observer le contenu et le type des différentes
+                variables,</li>
             <li>écrire du code structuré et correctement indenté,</li>
             <li>écrire du code <strong>largement documenté !</strong></li>
-            <li>l'ajout du code JavaScript est fait entre les balises &lt;script&gt;...&lt;script&gt; de ce fichiet html</li>
+            <li>l'ajout du code JavaScript est fait entre les balises &lt;script&gt;...&lt;script&gt; de ce fichiet html
+            </li>
         </ul>
         <p>Eléments de départ fournis quel que soit l'exercice :</p>
         <ul>
@@ -35,15 +37,18 @@
                     <li>une fonction de génération d'une série aléatoire de nombres entiers rangés dans un tableau de
                         type Array,</li>
                 </ul>
-                L'utilisation de ces outils n'est pas systématiquement nécessaire (cela dépend des exercices). Par contre, 
+                L'utilisation de ces outils n'est pas systématiquement nécessaire (cela dépend des exercices). Par
+                contre,
                 <span class="text-danger">vous n'avez, en aucun cas, besoin</span> :
                 <ul>
                     <li><span class="text-danger">de modifier le code</span> de ces outils,</li>
-                    <li><span class="text-danger">de copier le code</span> des fonctions contenues dans <em>tools.js</em> dans 
+                    <li><span class="text-danger">de copier le code</span> des fonctions contenues dans
+                        <em>tools.js</em> dans
                         votre propre code.<br>
-                        Si vous utilisez les fonctions outils, vous ne pouvez que les "appeler".</li>
+                        Si vous utilisez les fonctions outils, vous ne pouvez que les "appeler".
+                    </li>
                 </ul>
-                
+
             </li>
         </ul>
         <h5 class="text-success text-center">Que la force soit avec vous !</h5>
@@ -56,7 +61,8 @@
             <li>Exécutez le code pour constater qu'il ne semble pas fonctionner comme attendu.</li>
             <li>En effet, une erreur s'est glissée !<br>
                 Vous devez l'identifier, l'expliquer (par exemple, via des commentaires de code) et la corriger.<br>
-                Pas de bidouilles empiriques ou irrationnelles pour trouver l'erreur, utilisez le débugueur ! (l'observation 
+                Pas de bidouilles empiriques ou irrationnelles pour trouver l'erreur, utilisez le débugueur !
+                (l'observation
                 de l'évolution de la variable <em>numberA</em> devrait être instructive)...</li>
         </ol>
     </div>
@@ -77,16 +83,24 @@
 
     <!-- javascript part -->
     <script type="text/javascript">
+        //variable qui récupère l'élément #number
+        let element = document.getElementById("number");
 
-        let numberA = document.getElementById("number").value;
 
+        //fonction qui affiche une alert erreur si nombre < à 10 et > à 100
         function afficherMessage() {
-            
+            // variable qui stocke et transforme l'élément string en valeur, au sein de la fonction
+            numberA = element.value;
+            /* 
+             * si numberA est inférieur à 10 ou supérieur à 100
+             * afficher alert "erreur de saisie" 
+             * return, selon le résultat, termine la fonction et appelle le displayResult() 
+             */
             if ((numberA < 10) || (numberA > 100)) {
-                alert ("Erreur de saisie");
+                alert("Erreur de saisie");
                 return;
             }
-                
+            // appel de la fonction displayResult, affiche phrase et element récupéré
             displayResult('Vous avez choisi :', numberA);
         }
 
