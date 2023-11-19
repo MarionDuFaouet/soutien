@@ -91,19 +91,39 @@
 
     <!-- javascript part -->
     <script type="text/javascript">
-        let tab;
-        function genererTableau() {
-            tab = randomArrayOfIntFromInterval(20, 0, 100);
-            return;
-        }
 
+        //variable qui créé un tableau vide
+        let tab = [];
+        /* 
+         *fonction qui va générer un tableau
+         * complété grâce à la fonction random...
+         */
+        function genererTableau() {
+            // variable qui appelle la fonction random
+            tab = randomArrayOfIntFromInterval(20, 0, 100);
+            //fonction qui affiche le tableau
+            displayArray(tab);
+            return tab;
+        }
+        /*
+         * fonction qui lance le parcours du tableau,
+         * filtre à l'aide d'une boucle
+         * les chiffres uniquement supérieurs à 50
+         */
         function filtrerTableau() {
-            let tabFiltre = [];
-            for (let i = 0; tab.length; i++) {
-                if (tab[i] > 50) tabFiltre.push(tab[i]);
+            //variable qui créé nouveau tableau
+            let filterTab = [];
+            /* 
+             * boucle qui va filtrer les données de tab
+             * si elles sont supérieurs à 50,
+             * va les ranger dans le filterTab
+             * et les présenter en appelant la fonction displayArray
+             */
+            for (let i = 0; i < tab.length; i++) {
+                if (tab[i] > 50){
+                filterTab.push(tab[i])};
             }
-            displayArray(tabFiltre);
-            return;
+            displayArray(filterTab);
         }
 
 
